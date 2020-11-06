@@ -1,30 +1,26 @@
 package testAutomation;
 
-
 import method.methodClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-
 public class test {
-
     public WebDriver driver;
-
 
     @BeforeSuite
     public void beforeSuite() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\ILBER ORTAYLI\\Desktop\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\seleniumTutorialEpeyN\\chromedriver.exe");
         this.driver = new ChromeDriver();
         this.driver.manage().window().maximize();
     }
 
-
-//   @AfterSuite
-//    public void quit (){
-//        driver.quit();
-//   }
+    /*@AfterSuite
+    public void quit() {
+        driver.quit();
+    }*/
 
     @Test
     public void test1() throws InterruptedException {
@@ -48,7 +44,6 @@ public class test {
                 .clickMenuOption("Samsung Telefon Fiyatları")
                 .comparison("Temizle")
                 .timeLineBarDrag("1",-25,0)
-
         ;
     }
 
@@ -58,10 +53,7 @@ public class test {
         methodClass
                 .openPage()
                 .round("Fırsat Ürünler")
-
-
         ;
 
     }
-
 }
